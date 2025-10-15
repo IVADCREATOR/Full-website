@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | O Começo</title>
+    
+    <link rel="stylesheet" href="style.css"> 
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth-compat.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">O Começo E-commerce</h1>
+            <nav>
+                <a href="index.html">Início</a>
+                <a href="login.html" id="link-login">Login/Cadastro</a>
+                <a href="carrinho.html" id="link-carrinho">Carrinho (0)</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container checkout-page">
+        <h2>Finalizar Compra</h2>
+
+        <div id="checkout-content">
+            
+            <section class="checkout-section">
+                <h3>1. Informações de Entrega</h3>
+                <p id="info-usuario-logado" style="font-style: italic;">Carregando dados do usuário...</p>
+                <form id="shipping-form">
+                    <input type="text" id="cep" placeholder="CEP" required>
+                    <input type="text" id="endereco" placeholder="Rua, Número" required>
+                    <input type="text" id="cidade" placeholder="Cidade" required>
+                    <input type="text" id="estado" placeholder="Estado (Ex: SP)" required>
+                    </form>
+            </section>
+            
+            <section class="checkout-section order-summary">
+                <h3>2. Resumo do Pedido</h3>
+                <div id="checkout-items">
+                    </div>
+                <div class="summary-line total">
+                    <span>Total a Pagar:</span>
+                    <span id="checkout-total">R$ 0,00</span>
+                </div>
+            </section>
+
+            <section class="checkout-section">
+                <h3>3. Pagamento</h3>
+                <p>O pagamento será processado via Gateway de Pagamento Seguro.</p>
+                <select id="payment-method" required>
+                    <option value="gateway">Cartão de Crédito (Gateway)</option>
+                    <option value="boleto">Boleto Bancário</option>
+                </select>
+            </section>
+            
+            <button id="btn-finalizar-pedido" onclick="finalizarPedido()">
+                Confirmar e Pagar
+            </button>
+            
+            <p id="checkout-status-message" style="margin-top: 15px;"></p>
+        </div>
+        
+        <div id="login-required-message" style="text-align: center; display: none;">
+            <p>Você precisa estar logado para finalizar sua compra. <a href="login.html">Faça login agora.</a></p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 O Começo E-commerce.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Função a ser definida no script.js
+        document.addEventListener('DOMContentLoaded', inicializarCheckout);
+    </script>
+</body>
+</html>

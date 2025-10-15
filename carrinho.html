@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seu Carrinho | O Começo</title>
+    
+    <link rel="stylesheet" href="style.css"> 
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth-compat.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">O Começo E-commerce</h1>
+            <nav>
+                <a href="index.html">Início</a>
+                <a href="login.html" id="link-login">Login/Cadastro</a>
+                <a href="carrinho.html" id="link-carrinho">Carrinho (0)</a>
+            </nav>
+            </div>
+    </header>
+
+    <main class="container cart-page">
+        <h2>Seu Carrinho de Compras</h2>
+        
+        <div id="cart-items-container">
+            <p>Seu carrinho está vazio.</p>
+        </div>
+
+        <div class="cart-summary">
+            <div class="summary-line">
+                <span>Subtotal:</span>
+                <span id="cart-subtotal">R$ 0,00</span>
+            </div>
+            <div class="summary-line total">
+                <span>Total a Pagar:</span>
+                <span id="cart-total">R$ 0,00</span>
+            </div>
+            
+            <button id="btn-checkout" onclick="irParaCheckout()" disabled>
+                Finalizar Compra
+            </button>
+            <p id="checkout-message" style="margin-top: 10px;"></p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 O Começo E-commerce.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Funções específicas do carrinho serão definidas e chamadas aqui
+        document.addEventListener('DOMContentLoaded', carregarItensCarrinho);
+    </script>
+</body>
+</html>

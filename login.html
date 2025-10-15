@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login e Cadastro | O Começo</title>
+    
+    <link rel="stylesheet" href="style.css"> 
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth-compat.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">O Começo E-commerce</h1>
+            <nav>
+                <a href="index.html">Início</a>
+                <a href="login.html" id="link-login">Login/Cadastro</a>
+                <a href="carrinho.html" id="link-carrinho">Carrinho (0)</a>
+            </nav>
+            </div>
+    </header>
+
+    <main class="container auth-page">
+        <div class="auth-forms">
+            
+            <div id="login-form-container">
+                <h2>Acesse sua conta</h2>
+                <input type="email" id="login-email" placeholder="E-mail" required>
+                <input type="password" id="login-senha" placeholder="Senha" required>
+                <button onclick="realizarLogin()">Entrar</button>
+                <p class="form-switch">
+                    Não tem conta? <a href="#" onclick="mostrarRegistro()">Cadastre-se</a>
+                </p>
+            </div>
+            
+            <div id="register-form-container" style="display: none;">
+                <h2>Crie sua conta</h2>
+                <input type="email" id="register-email" placeholder="E-mail" required>
+                <input type="password" id="register-senha" placeholder="Senha" required>
+                <input type="password" id="register-confirm-senha" placeholder="Confirmar Senha" required>
+                <button onclick="realizarRegistro()">Registrar</button>
+                <p class="form-switch">
+                    Já tem conta? <a href="#" onclick="mostrarLogin()">Faça login</a>
+                </p>
+            </div>
+
+            <p id="auth-message" class="message-area" style="margin-top: 15px;"></p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 O Começo E-commerce.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Funções auxiliares para alternar a visualização dos formulários
+        function mostrarRegistro() {
+            document.getElementById('login-form-container').style.display = 'none';
+            document.getElementById('register-form-container').style.display = 'block';
+            document.getElementById('auth-message').textContent = '';
+        }
+        function mostrarLogin() {
+            document.getElementById('login-form-container').style.display = 'block';
+            document.getElementById('register-form-container').style.display = 'none';
+            document.getElementById('auth-message').textContent = '';
+        }
+    </script>
+</body>
+</html>

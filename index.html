@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seu Site de Vendas | O Começo</title>
+    
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore-compat.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">O Começo E-commerce</h1>
+            <nav>
+                <a href="index.html">Início</a>
+                <a href="#" id="link-login">Login/Cadastro</a>
+                <a href="#" id="link-carrinho">Carrinho (0)</a>
+            </nav>
+            <div class="search-bar">
+                <input type="text" id="input-busca" placeholder="Buscar produtos...">
+                <button onclick="realizarBusca()">Buscar</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <h2>Produtos em Destaque</h2>
+        <div id="lista-produtos" class="product-grid">
+            <p>Carregando produtos...</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 O Começo E-commerce.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
